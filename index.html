@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Offcial website of 'Anywhere: A Multi-Agent Framework for Reliable and Diverse Foreground-Conditioned Image Inpainting'">
+  <meta name="keywords" content="Anywhere, Image inpainting, Multi-Agent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>InstantID</title>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MRQC0YFE17');
+</script>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <style>
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  </style>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        
+        <div class="container has-text-centered">
+          
+          <h1 class="title is-1 publication-title">
+            Anywhere: A Multi-Agent Framework for Reliable and Diverse Foreground-Conditioned Image Inpainting
+          </h1>
+          
+          <div class="is-size-2 publication-authors">
+            <div class="author-block">
+              <a href="https://github.com/Sealical">Tianyidan Xie</a><sup>1</sup>,
+            </div>
+              Rui Ma<sup>2</sup>, Qian Wang<sup>*,3</sup><br>
+              Xiaoqian Ye<sup>3</sup>, Feixuan Liu<sup>4</sup>, <br>
+              Ying Tai<sup>1</sup>, Zhenyu Zhang<sup>1</sup>, and Zili Yi<sup>*,1</sup><br>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Nanjing University </span>
+            <span class="author-block"><sup>2</sup>Jilin University </span>
+            <br>
+            <span class="author-block"><sup>3</sup>China Mobile Communications Group</span>
+            <br>
+             <span class="author-block"><sup>4</sup>Larkagent AI </span><br>
+            <span class="author-block"><sup>*</sup>Corresponding Author</span> 
+<!--             <br>
+            <span class="author-block">sealical@outlook.com</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/xxxx" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Arxiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/Sealical/anywhere-multi-agent"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <img src="./static/documents/teaser.jpg" alt="Teaser Image" height="100%">
+        <h2 class="subtitle has-text-centered">
+          Our approach enables any object to be placed in any suitable and diverse locations.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              Recent advancements in image inpainting, particularly through diffusion modeling, have yielded promising outcomes. However, when tested in scenarios involving the completion of images based on the foreground objects, current methods that aim to inpaint an image in an end-to-end manner encounter challenges such as “over-imagination”, inconsistency between foreground and background, and limited diversity. In response, we introduce <strong>Anywhere</strong>, a pioneering multi-agent framework designed to address these issues. Anywhere utilizes a sophisticated pipeline framework comprising various agents such as Visual Language Model (VLM), Large Language Model (LLM), and image generation models. This framework consists of three principal components: the prompt generation module, the image generation module, and the outcome analyzer. The prompt generation module conducts a semantic analysis of the input foreground image, leveraging VLM to predict relevant language descriptions and LLM to recommend optimal language prompts. In the image generation module, we employ a text-guided canny-to-image generation model to create a template image based on the edge map of the foreground image and language prompts, and an image refiner to produce the outcome by blending the input foreground and the template image. The outcome analyzer employs VLM to evaluate image content rationality, aesthetic score, and foreground-background relevance, triggering prompt and image regeneration as needed. Extensive experiments demonstrate that our Anywhere framework excels in foreground-conditioned image inpainting, mitigating “overimagination”, resolving foreground-background discrepancies, and enhancing diversity. It successfully elevates foreground-conditioned image inpainting to produce more reliable and diverse results.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+  </section>
+
+  <section class="method">
+    <div class="container is-max-desktop">
+
+      <!-- Method. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              Anywhere is a multi-agent image generation framework comprising agents of various modalities, such as large language model, visual language model, controlled image generation model, and inpainting model. Its workflow encompasses three modules: the prompt generation module, the image generation module, and the outcome analyzer, as illustrated in Figure Anywhere achieves background generation by processing images through modules utilizing diverse agents.
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/framework_latest.png" alt="Image0" height="100%">
+          </div>
+
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+<!--   <div class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Comparison with Previous Inpainting model</h3>
+      <div id="results-carousel" class="carousel results-carousel carousel-control-prev carousel-inner" data-ride="carousel">
+        <div>
+          <div class="results-item">
+            <img src="./static/documents/opensource_comparison.jpg", height="100">
+          </div>
+        </div>
+
+      <div>
+          <div class="results-item">
+            <img src="./static/documents/opensource_comparison_appendix1.jpg" alt="Image0" height="90%">
+          </div>
+        </div>
+
+        <div>
+          <div class="results-item">
+            <img src="./static/documents/opensource_comparison_appendix2.jpg" alt="Image0" weight="65%">
+          </div>
+        </div>
+
+
+      </div>
+
+  </div class="section"> -->
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Comparison with Previous Works</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/opensource_comparison.jpg" alt="Image0" height="100%">
+          </div>
+
+        <h2 class="title is-3">Comparison with Business Products</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/business_comparison.jpg" alt="Image0" height="100%">
+          </div>
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">The Influence of Different Modules in Our Anywhere Framework</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/ablation_prompt_latest.jpg" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              The prompt generation module (PG). It reveals that without the prompt generation module, our system tends to produce less diverse results with uniform empty backgrounds.. 
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/ablation_inpaint.jpg" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-centered">
+            <p>
+              The repainting agent (RA). The red circles highlight the regions with “over-imagination”. As shown, the repainting agent contributes to mitigating the “over-imagination” issue.
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/ablation_feedback.jpg" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              The outcome analyzer. As shown, the mechanism of feedback-based regeneration significantly improves the quality of the final outcomes. Rows 1 and 4 indicates instances of view inconsistency without the feedback-loop. Rows 2, 3 and 6 indicates foreground-background irrelevance without the feedback-loop. Rows 5 indicates content irrationality due to erroneous relative size without the regeneration mechanism.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">More Comparisons</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/opensource_comparison_appendix1.jpg" alt="Image0" height="100%">
+          </div>
+
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/opensource_comparison_appendix2.jpg" alt="Image0" height="100%">
+          </div>
+
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container content is-max-desktop">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{wang2024instantid,
+  title={InstantID: Zero-shot Identity-Preserving Generation in Seconds},
+  author={Wang, Qixun and Bai, Xu and Wang, Haofan and Qin, Zekui and Chen, Anthony},
+  journal={arXiv preprint arXiv:2401.07519},
+  year={2024}
+}</code></pre>
+  </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          The website template is borrowed from HyperNeRF.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="./static/slick/slick.js"></script>
+</body>
+
+</html>
