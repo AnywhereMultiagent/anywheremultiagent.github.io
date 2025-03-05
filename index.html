@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="Offcial website of 'Anywhere: A Multi-Agent Framework for Reliable and Diverse Foreground-Conditioned Image Inpainting'">
+    content="Offcial website of 'Anywhere: A Multi-Agent Framework for User-Guided, Reliable, and Diverse Foreground-Conditioned Image Generation'">
   <meta name="keywords" content="Anywhere, Image inpainting, Multi-Agent">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -58,21 +58,24 @@
         <div class="container has-text-centered">
           
           <h1 class="title is-1 publication-title">
-            Anywhere: A Multi-Agent Framework for Reliable and Diverse Foreground-Conditioned Image Inpainting
+            Anywhere: A Multi-Agent Framework for User-Guided, Reliable, and Diverse Foreground-Conditioned Image Generation
           </h1>
+
+          <p class="is-size-3 has-text-weight-bold">🎉 <strong> Paper accepted at AAAI 2025! </strong> 🎉</p>
           
           <div class="is-size-2 publication-authors">
             <div class="author-block">
-              <a href="https://github.com/Sealical">Tianyidan Xie</a><sup>1</sup>,
+              <a href="mailto:sealical@outlook.com">Tianyidan Xie</a><sup>1</sup>,
             </div>
               Rui Ma<sup>2</sup>, Qian Wang<sup>*,3</sup><br>
-              Xiaoqian Ye<sup>3</sup>, Feixuan Liu<sup>4</sup>, <br>
+              Xiaoqian Ye<sup>3</sup>, Feixuan Liu<sup>4</sup>, Lanjun Wang<sup>5</sup>,<br>
               Ying Tai<sup>1</sup>, Zhenyu Zhang<sup>1</sup>, and Zili Yi<sup>*,1</sup><br>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Nanjing University </span>
             <span class="author-block"><sup>2</sup>Jilin University </span>
+            <span class="author-block"><sup>5</sup>Tianjin University </span>
             <br>
             <span class="author-block"><sup>3</sup>China Mobile Communications Group</span>
             <br>
@@ -113,16 +116,17 @@
   </section>
 
 
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <img src="./static/documents/teaser.jpg" alt="Teaser Image" height="100%">
-        <h2 class="subtitle has-text-centered">
-          Our approach enables any object to be placed in any suitable and diverse locations.
-        </h2>
-      </div>
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <img src="./static/documents/teaser.png" alt="Teaser Image" width="60%">
+      <h2 class="subtitle has-text-centered">
+        Our approach enables any object to be placed in any suitable and diverse locations.
+      </h2>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <section class="section">
@@ -135,7 +139,7 @@
 
           <div class="content has-text-justified">
             <p>
-              Recent advancements in image inpainting, particularly through diffusion modeling, have yielded promising outcomes. However, when tested in scenarios involving the completion of images based on the foreground objects, current methods that aim to inpaint an image in an end-to-end manner encounter challenges such as “over-imagination”, inconsistency between foreground and background, and limited diversity. In response, we introduce <strong>Anywhere</strong>, a pioneering multi-agent framework designed to address these issues. Anywhere utilizes a sophisticated pipeline framework comprising various agents such as Visual Language Model (VLM), Large Language Model (LLM), and image generation models. This framework consists of three principal components: the prompt generation module, the image generation module, and the outcome analyzer. The prompt generation module conducts a semantic analysis of the input foreground image, leveraging VLM to predict relevant language descriptions and LLM to recommend optimal language prompts. In the image generation module, we employ a text-guided canny-to-image generation model to create a template image based on the edge map of the foreground image and language prompts, and an image refiner to produce the outcome by blending the input foreground and the template image. The outcome analyzer employs VLM to evaluate image content rationality, aesthetic score, and foreground-background relevance, triggering prompt and image regeneration as needed. Extensive experiments demonstrate that our Anywhere framework excels in foreground-conditioned image inpainting, mitigating “overimagination”, resolving foreground-background discrepancies, and enhancing diversity. It successfully elevates foreground-conditioned image inpainting to produce more reliable and diverse results.
+              Recent advancements in image-conditioned image generation have demonstrated substantial progress. However, foreground-conditioned image generation remains underexplored, encountering challenges such as compromised object integrity, foreground-background inconsistencies, limited diversity, and reduced control flexibility. These challenges arise from current end-to-end inpainting models, which suffer from inaccurate training masks, limited foreground semantic understanding, data distribution biases, and inherent interference between visual and textual prompts. To overcome these limitations, we present <strong>Anywhere</strong>, a multi-agent framework that departs from the traditional end-to-end approach. In this framework, each agent is specialized in a distinct aspect, such as foreground understanding, diversity enhancement, object integrity protection, and textual prompt consistency. Our framework is further enhanced with the ability to incorporate optional user textual inputs, perform automated quality assessments, and initiate re-generation as needed. Comprehensive experiments demonstrate that this modular design effectively overcomes the limitations of existing end-to-end models, resulting in higher fidelity, quality, diversity and controllability in foreground-conditioned image generation. Additionally, the Anywhere framework is extensible, allowing it to benefit from future advancements in each individual agent.
             </p>
           </div>
         </div>
@@ -154,12 +158,12 @@
 
           <div class="content has-text-justified">
             <p>
-              Anywhere is a multi-agent image generation framework comprising agents of various modalities, such as large language model, visual language model, controlled image generation model, and inpainting model. Its workflow encompasses three modules: the prompt generation module, the image generation module, and the outcome analyzer, as illustrated in Figure Anywhere achieves background generation by processing images through modules utilizing diverse agents.
+              Anywhere is a multi-agent image generation framework comprising agents of various modalities, such as large language model, visual language model, controlled image generation model, and inpainting model. Its workflow encompasses three modules: the prompt generation module, the image generation module, and the quality evaluator, as illustrated in Figure Anywhere achieves background generation by processing images through modules utilizing diverse agents.
             </p>
           </div>
 
           <div class="container is-max-desktop">
-            <img src="./static/documents/framework_latest.png" alt="Image0" height="100%">
+            <img src="./static/documents/framework.png" alt="Image0" height="100%">
           </div>
 
 
@@ -206,11 +210,16 @@
           <h2 class="title is-3">Comparison with Previous Works</h2>
 
           <div class="container is-max-desktop">
-            <img src="./static/documents/opensource_comparison.jpg" alt="Image0" height="100%">
+            <img src="./static/documents/opensource_comparison.png" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              We compare our approach to advanced inpainting models on foreground-conditioned image generation tasks in both text-free (I2I) and text-guided (TI2I) scenarios. These results are generated using unconstrained, in-the-wild foreground images. Red color indicates missing elements in generated images. The inpainting models used for comparison include HD-Painter (<strong>HDP</strong>), BrushNet (<strong>BN</strong>), and Stable Diffusion 2.0 Inpainting (<strong>SDI</strong>).  
+            </p>
           </div>
 
         <h2 class="title is-3">Comparison with Business Products</h2>
-
           <div class="container is-max-desktop">
             <img src="./static/documents/business_comparison.jpg" alt="Image0" height="100%">
           </div>
@@ -230,33 +239,46 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">The Influence of Different Modules in Our Anywhere Framework</h2>
 
-          <div class="container is-max-desktop">
-            <img src="./static/documents/ablation_prompt_latest.jpg" alt="Image0" height="100%">
+          <div class="container is-max-desktop has-text-centered">
+            <img src="./static/documents/ablation_prompt.png" alt="Image0" width="50%">
           </div>
 
           <div class="content has-text-justified">
             <p>
-              The prompt generation module (PG). It reveals that without the prompt generation module, our system tends to produce less diverse results with uniform empty backgrounds.. 
+              The prompt generation module (PG). It reveals that without the prompt generation module, our system tends to produce less diverse results with uniform empty backgrounds.
             </p>
           </div>
 
+
           <div class="container is-max-desktop">
-            <img src="./static/documents/ablation_inpaint.jpg" alt="Image0" height="100%">
+            <img src="./static/documents/ablation_repainter.png" alt="Image0" width="50%">
           </div>
 
           <div class="content has-text-centered">
             <p>
-              The repainting agent (RA). The red circles highlight the regions with “over-imagination”. As shown, the repainting agent contributes to mitigating the “over-imagination” issue.
+              The Template Repainter. As shown, the repainting agent contributes to mitigating the “over-imagination” issue.
             </p>
           </div>
 
+
           <div class="container is-max-desktop">
-            <img src="./static/documents/ablation_feedback.jpg" alt="Image0" height="100%">
+            <img src="./static/documents/ablation_image.png" alt="Image0" width="50%">
           </div>
 
           <div class="content has-text-justified">
             <p>
-              The outcome analyzer. As shown, the mechanism of feedback-based regeneration significantly improves the quality of the final outcomes. Rows 1 and 4 indicates instances of view inconsistency without the feedback-loop. Rows 2, 3 and 6 indicates foreground-background irrelevance without the feedback-loop. Rows 5 indicates content irrationality due to erroneous relative size without the regeneration mechanism.
+              The Image Enchancer. This agent enhances the overall quality of the composite image, focusing on fine details, color balance, and smooth transitions. 
+            </p>
+          </div>
+
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/ablation_quality.png" alt="Image0" width="60%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              The Quality Evaluator. As shown, the mechanism of feedback-based regeneration significantly improves the quality of the final outcomes.
             </p>
           </div>
 
@@ -276,12 +298,22 @@
           <h2 class="title is-3">More Comparisons</h2>
 
           <div class="container is-max-desktop">
-            <img src="./static/documents/opensource_comparison_appendix1.jpg" alt="Image0" height="100%">
+            <img src="./static/documents/more_img2img.png" alt="Image0" width="80%">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              More qualitative results on text-free scenarios (I2I).
+            </p>
           </div>
 
 
           <div class="container is-max-desktop">
-            <img src="./static/documents/opensource_comparison_appendix2.jpg" alt="Image0" height="100%">
+            <img src="./static/documents/more_ti2i.png" alt="Image0" width="80%">
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              More qualitative results on text-guided scenarios (TI2I).
+            </p>
           </div>
 
 
@@ -294,13 +326,11 @@
   <section class="section" id="BibTeX">
     <div class="container content is-max-desktop">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{xie2024anywhere,
-      title={Anywhere: A Multi-Agent Framework for Reliable and Diverse Foreground-Conditioned Image Inpainting}, 
-      author={Tianyidan Xie and Rui Ma and Qian Wang and Xiaoqian Ye and Feixuan Liu and Ying Tai and Zhenyu Zhang and Zili Yi},
-      year={2024},
-      eprint={2404.18598},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      <pre><code>@article{xie2024anywhere,
+  title={Anywhere: A Multi-Agent Framework for Reliable and Diverse Foreground-Conditioned Image Inpainting},
+  author={Xie, Tianyidan and Ma, Rui and Wang, Qian and Ye, Xiaoqian and Liu, Feixuan and Tai, Ying and Zhang, Zhenyu and Yi, Zili},
+  journal={arXiv preprint arXiv:2404.18598},
+  year={2024}
 }</code></pre>
   </div>
   </section>
