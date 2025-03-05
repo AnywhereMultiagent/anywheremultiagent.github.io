@@ -1,1 +1,1 @@
-# Project page for paper "Anywhere: A Multi-Agent Framework for Reliable and Diverse Foreground-Conditioned Image Inpainting"
+# Project page for AAAI 2025 paper "Anywhere: A Multi-Agent Framework for User-Guided, Reliable, and Diverse Foreground-Conditioned Image Generation"
